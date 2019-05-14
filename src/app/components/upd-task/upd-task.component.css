@@ -1,0 +1,12 @@
+.add-task-btn{
+    margin-right : 20px
+} 
+ .success-message{
+     background: #9dcc9d;
+     padding: 10px;
+     margin: 10px
+ }
+
+ .update-task{
+     padding: 10px
+ }

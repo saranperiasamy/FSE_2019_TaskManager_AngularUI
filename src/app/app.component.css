@@ -1,0 +1,13 @@
+
+
+.custom-nav-tabs{
+    list-style: none;
+}
+
+.custom-nav-tabs li{
+    display: inline-block;
+    padding: 10px;
+    background: #EEE;
+    margin : 10px;
+    cursor: pointer;
+}
