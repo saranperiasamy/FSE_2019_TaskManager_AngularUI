@@ -1,15 +1,15 @@
-import { ParentTaskFilterPipe } from './parent-task-filter.pipe';
 import { Task } from 'src/app/task';
+import { TaskFilterPipe } from './task-filter.pipe';
 
-describe('ParentTaskFilterPipe', () => {
-  let pipe = new ParentTaskFilterPipe();
+describe('TaskFilterPipe', () => {
+  let pipe = new TaskFilterPipe();
   let tasks : Task [];
 
   beforeEach(() => {
     tasks = [
               new Task(1, 'Sample Task-1',1,'2019-04-08','2019-04-08',1,{parentId: 0, parentTaskName:''}),
               new Task(2, 'Sample Task-2',1,'2019-04-08','2019-06-10',1,{parentId: 1, parentTaskName:'Sample Task-1'}),
-              new Task(3, 'Sample Task-3',1,'2019-06-01','2019-06-10',1,{parentId: 0, parentTaskName:''}),
+              new Task(3, 'Dummy Task-3',1,'2019-06-01','2019-06-10',1,{parentId: 0, parentTaskName:''}),
             ]
   });
 
@@ -17,13 +17,13 @@ describe('ParentTaskFilterPipe', () => {
     expect(pipe).toBeTruthy();
   });
 
-  it('should return tasks as is when there is no Parent Task name filter given', ()=> {
+  it('should return tasks as is when there is no Task name filter given', ()=> {
     let parentTaskFilter = "";
     expect(pipe.transform(tasks,parentTaskFilter)).toBe(tasks);
   })
 
-  it('should return tasks with parent tasks that contain parent task filter with no case sensitivity', ()=> {
+  it('should return tasks with task names that contain task name filter with no case sensitivity', ()=> {
     let parentTaskFilter = 'sample';
-    expect(pipe.transform(tasks,parentTaskFilter).length).toBe(1);
+    expect(pipe.transform(tasks,parentTaskFilter).length).toBe(2);
   })
 });

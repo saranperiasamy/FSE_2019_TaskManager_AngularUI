@@ -12,9 +12,9 @@ import { ParentTask } from 'src/app/parent-task';
 })
 export class UpdTaskComponent implements OnInit {
 
-  taskModel;
+  taskModel : Task;
   successMessage = "";
-  task;
+  task : Task;
   parentTasks: ParentTask [];
 
   constructor(private dataService: DataService, private router : Router){

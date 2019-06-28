@@ -26,3 +26,9 @@
 .search-panel div:nth-child(4){
     flex : 4
 }
+
+.success-message{
+    background: #9dcc9d;
+    padding: 10px;
+    margin: 10px
+}

@@ -10,8 +10,8 @@ export class EndDateFilterPipe implements PipeTransform {
     if(!tasks || !searchEndDate) {
       return tasks;
     }
-  return tasks.filter(task => 
-      task.endDate <= searchEndDate
-      );
-  }
+    return tasks.filter(task => 
+        task.endDate <= searchEndDate
+        );
+    }
 }

@@ -12,18 +12,12 @@
       <div *ngIf="taskName.errors.minlength">
           Task Name must be atleast 4 Characters long
       </div>  
-    </div>
+    </div> 
 
-    <div class="alert alert-warning" *ngIf="(taskForm.dirty && (startDate.invalid || endDate.invalid)) && (startDate.touched || endDate.touched)"> 
-        <div *ngIf="startDate.errors.required && endDate.errors.required">
-          Start Date and End Date are required
-        </div>  
-        <div *ngIf="startDate.errors.required && endDate.valid">
-            Start Date is required
-        </div>  
-        <div *ngIf="startDate.valid && endDate.errors.required">
-            End Date is required
-          </div>  
+    <div class="alert alert-warning" *ngIf="(taskForm.dirty && startDate.invalid)"> 
+      <div *ngIf="startDate.errors.required">
+          Start Date is required
+      </div>  
     </div>
 
     <form #taskForm="ngForm" (ngSubmit)="!taskForm.invalid && onSubmit()">
@@ -74,13 +68,13 @@
           <label>End: </label>
         </div>
         <div class="col-xs-3 col-sm-4">
-          <input type="date" class="form-control" [(ngModel)]="taskModel.endDate" name="endDate" #endDate="ngModel" required>
+          <input type="date" class="form-control" data-date-format="YYYY MM DD" [(ngModel)]="taskModel.endDate" 
+            name="endDate">
         </div>
       </div>
 
       <button class="btn btn-primary add-task-btn" type="submit">Add Task</button>
-      <button class="btn btn-warning" (click)="taskForm.reset(); resetMessage();" type="reset">Reset</button>
-
+      <button class="btn btn-warning" (click)="taskForm.reset(); resetForm(); resetMessage();" type="reset">Reset</button>
     </form>
   </div>
 </div>

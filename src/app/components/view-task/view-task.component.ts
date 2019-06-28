@@ -13,6 +13,7 @@ export class ViewTaskComponent implements OnInit {
 
     tasks = [];
     filteredTasks = [];
+    successMessage;
 
     // private _searchTask: string;
     // private _searchParentTask: string;
@@ -82,6 +83,7 @@ export class ViewTaskComponent implements OnInit {
         this.data.updTask(task).subscribe(
           data=> {
             console.log('Success Completed Successfully!!', data);
+            this.successMessage = 'Task Completed Successfully!!';
             this.router.navigate(["tasks/view"])
           },
           error=> console.log('Error ',error)

@@ -15,7 +15,7 @@ export class AddTaskComponent implements OnInit {
  
   successMessage = "";
   constructor(private dataService: DataService) {
-    this.taskModel = new Task(null, '', null, '', '', 0, new ParentTask(0, null));
+    this.taskModel = new Task(null, '', 0, '', '', 0, new ParentTask(0, null));
     this.successMessage = "";
   }
 
@@ -37,8 +37,10 @@ export class AddTaskComponent implements OnInit {
   }
 
   resetForm(): void {
-    this.taskModel.priority = 0;
-    this.taskModel.endDate = null;
+    // this.taskModel.priority = 0;
+    // this.taskModel.taskName = null;
+    // this.taskModel.startDate = null;
+    // this.taskModel.endDate = null;
 
     this.dataService.getParentTasks().subscribe(
       data => {

@@ -48,7 +48,6 @@
       <tbody>
         <tr *ngFor="let task of tasks | taskFilter:searchTask | parentTaskFilter:searchParent | priorityFilter:searchPriorityFrom | priorityToFilter:searchPriorityTo | startDateFilter:searchStartDate | endDateFilter:searchEndDate"
           class="{{(task.completed == 1) ? 'inactive' : 'active'}}">
-          <!-- <tr *ngFor="let task of filteredTasks" class="{{(task.completed == 1) ? 'inactive' : 'active'}}"> -->
           <td> {{ task.taskName}}</td>
           <td> {{ task.parentTask?.parentTaskName || ""}}</td>
           <td> {{ task.priority}}</td>

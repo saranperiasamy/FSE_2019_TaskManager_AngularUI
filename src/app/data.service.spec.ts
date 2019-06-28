@@ -1,12 +1,17 @@
-import { TestBed } from '@angular/core/testing';
-
 import { DataService } from './data.service';
 
 describe('DataService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  let service : DataService;
 
-  it('should be created', () => {
-    const service: DataService = TestBed.get(DataService);
-    expect(service).toBeTruthy();
+  beforeEach(()=> {
+    service = new DataService(null);
+  });
+
+  it('', () => {
+    let spy = spyOn(service,'getTaskDetail').and.returnValue(null);
+
+    service.getTaskDetail();
+
+    //expect(service.getTaskDetail).toHaveBeenCalledWith(spy);
   });
 });
