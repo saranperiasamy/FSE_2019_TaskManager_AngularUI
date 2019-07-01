@@ -23,7 +23,7 @@ export class AddTaskComponent implements OnInit {
     console.log(this.taskModel)
     this.dataService.addTask(this.taskModel).subscribe(
       data => {
-        console.log('Success !!', data);
+        // console.log('Success !!', data);
         //alert("Task Created Successfully!") 
         this.successMessage = "Task Created Successfully!";
         this.resetForm();
@@ -41,11 +41,12 @@ export class AddTaskComponent implements OnInit {
     // this.taskModel.taskName = null;
     // this.taskModel.startDate = null;
     // this.taskModel.endDate = null;
-
+    this.taskModel = new Task(null, '', 0, '', '', 0, new ParentTask(0, null));
+    
     this.dataService.getParentTasks().subscribe(
       data => {
         this.parentTasks = data as ParentTask[]
-        console.log('All Parent Tasks..', this.parentTasks)
+        // console.log('All Parent Tasks..', this.parentTasks)
       }
     )
   }

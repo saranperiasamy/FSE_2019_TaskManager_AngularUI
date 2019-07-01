@@ -14,7 +14,7 @@
       </div>  
     </div> 
 
-    <div class="alert alert-warning" *ngIf="(taskForm.dirty && startDate.invalid)"> 
+    <div class="alert alert-warning" *ngIf="(taskForm.dirty && startDate.invalid) && (startDate.dirty || startDate.touched) "> 
       <div *ngIf="startDate.errors.required">
           Start Date is required
       </div>  

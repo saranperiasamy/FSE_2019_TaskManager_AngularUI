@@ -19,13 +19,13 @@ export class DataService {
   }
 
   addTask(task : any){
-    console.log("Inside API call")
+    // console.log("Inside API call")
     return this.http.post<any>('http://localhost:8081/tasks',task)
   }
 
   updTask(task : Task) {
-    console.log("Inside Update - PUT API Call..")
-    console.log(task)
+    // console.log("Inside Update - PUT API Call..")
+    // console.log(task)
     return this.http.put<any>('http://localhost:8081/tasks',task)
   }
 

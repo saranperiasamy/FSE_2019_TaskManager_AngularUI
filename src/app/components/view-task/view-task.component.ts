@@ -56,7 +56,7 @@ export class ViewTaskComponent implements OnInit {
             if(!data[key].parentTask){
               data[key].parentTask = new ParentTask(0, "")
             }
-            console.log(data[key])
+            // console.log(data[key])
             this.tasks.push(data[key])
             this.filteredTasks.push(data[key])
         });
@@ -82,7 +82,7 @@ export class ViewTaskComponent implements OnInit {
         this.data.setTaskDetail(task);
         this.data.updTask(task).subscribe(
           data=> {
-            console.log('Success Completed Successfully!!', data);
+            // console.log('Success Completed Successfully!!', data);
             this.successMessage = 'Task Completed Successfully!!';
             this.router.navigate(["tasks/view"])
           },
